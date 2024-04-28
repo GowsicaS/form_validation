@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="whole-container">
+        <div class="form-card">
+            <p class="description">Enter the UserName:</p>
+            <input type="text" placeholder="UserName" id="user">
+            <p id="username"></p>
+            <p class="description">Enter your Password:</p>
+            <input type="password" placeholder="Password" id="pass">
+            <p id="password"></p>
+            <button onclick="func()">Submit</button>
+            <p id="display-user"></p>
+            <p id="display-pass"></p>
+        </div>
+    </div>
+    <script>
+        function func(){
+            var user = document.getElementById("user").value;
+            var passWord = document.getElementById("pass").value;
+            if(user.length<4||user.length==0){
+                document.getElementById("username").innerHTML="*Inavlid UserName";
+                
+            }
+            else{
+                document.getElementById("username").innerHTML="*UserName Accepted";
+            }
+            if(passWord.length<4||passWord.length==0){
+                document.getElementById("password").innerHTML="*Inavlid Password";
+            }
+            else{
+                document.getElementById("password").innerHTML="*Password Accepted";
+            }
+            document.getElementById("display-user").innerHTML="UserName:" + user;
+            document.getElementById("display-pass").innerHTML="Password:" + passWord;
+        }
+    </script>
+</body>
+</html>
